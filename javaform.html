@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+</head>
+<body>
+
+<h2>FORM VALIDATION</h2>
+
+<form id="empty">
+    <label>userid:</label><br>
+    <input type="text" id="first"><br><br>
+
+    <label>account</label><br>
+    <input type="text" id="second"><br><br>
+
+    <label>rnpid</label><br>
+    <input type="text" id="third"><br><br>
+
+    <button type="submit">SAVE</button>
+</form>
+
+<script>
+    document.getElementById("empty").addEventListener("submit", function(event) {
+        
+        let userid = document.getElementById("first").value.trim();
+        let account = document.getElementById("second").value.trim();
+        let rnpid = document.getElementById("third").value.trim();
+
+        if (userid === "") {
+            alert("Please enter your userid.");
+            event.preventDefault();
+            return;
+        }
+
+        if (account === "") {
+            alert("Please enter your account.");
+            event.preventDefault();
+            return;
+        }
+
+        if (rnpid === "") {
+            alert("Please enter your job id.");
+            event.preventDefault();
+            return;
+        }
+
+    });
+</script>
+
+</body>
+</html>
